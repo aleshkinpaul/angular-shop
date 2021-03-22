@@ -1,0 +1,25 @@
+.favourite-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    
+    width: 48px;
+    height: 40px;
+    
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    color: #A3A3A3;
+}
+
+.active {
+    color: rgb(245, 24, 24);
+}
+
+.favourite-button:hover {
+    cursor: pointer;
+    color: rgb(245, 24, 24);
+}

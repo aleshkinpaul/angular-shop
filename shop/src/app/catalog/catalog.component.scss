@@ -1,0 +1,29 @@
+
+.product-card-list {
+    display: flex;
+}
+
+.functional-panel {
+    display: flex;
+    justify-content: space-between;
+
+    width: 1340px;
+}
+
+app-product-card {
+    display: block;
+    margin: 0 20px 0 0;
+    padding: 0 24px;
+    width: 320px;
+    min-height: 575px;
+
+    box-sizing: border-box;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 6px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+app-product-card:last-child {
+    margin: 0;
+}

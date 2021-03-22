@@ -1,0 +1,18 @@
+<div class="add-to-cart-button-block">
+    <button
+        class="add-to-cart-button"
+        disabled = {{isDisableValue}}
+        [ngClass]="{
+            'active': styles['active'],
+            'default-button': styles['default-button'],
+            'primary-button': styles['primary-button'],
+            'accent-button': styles['accent-button'],
+            'success-button': styles['success-button'],
+            'warning-button': styles['warning-button'],
+            'large-size-button': styles['large-size-button'],
+            'small-size-button': styles['small-size-button'],
+            'default-size-button': styles['default-size-button']
+        }"
+    >{{buttonTitle}}</button>
+    <span *ngIf="isAvailableInStorageWithoutSelected" class="storage-empty">Выбраны все доступные товары</span>
+</div>

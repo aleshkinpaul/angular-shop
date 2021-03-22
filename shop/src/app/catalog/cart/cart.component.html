@@ -1,0 +1,14 @@
+<div class="cart">
+    <app-bage *ngIf="getInCartProductCount() > 0" [inCartProductCount]="getInCartProductCount()"></app-bage>
+    <p class="cart-button material-icons"
+        [ngClass]="{ 'active': isOpen }" 
+        (click)="toggleCartPreview()">
+        shopping_cart
+    </p>
+    <app-preview *ngIf="isOpen" 
+        [inCart]="inCart" 
+        [isOpen]="isOpen" 
+        (clearCart)="clearCartEmit()" 
+        (deleteProductFromCart)="deleteProductFromCartEmit($event)"
+        (closePreview)="toggleCartPreview()"></app-preview>
+</div>

@@ -1,0 +1,4 @@
+<div class="cart-product-price">
+    <div class="actual-price">{{ discountPrice | currency:'RUB':'symbol-narrow':'1.0-0' }}</div>
+    <div class="full-price" *ngIf="price.discount && price.discount > 0">{{ price.value | currency:'RUB':'symbol-narrow':'1.0-0' }}</div>
+</div>

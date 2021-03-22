@@ -1,0 +1,16 @@
+<app-bage class="product-card-bage" [price]="getProductPrice()" *ngIf="isDiscount"></app-bage>
+<img class="product-card-image" [src]="product.imageUrl">
+<div class="product-card-description">
+    <h4 class="product-card-company">{{ product.company }}</h4>
+    <h2 class="product-card-title">{{ product.title }}</h2>
+    <app-rating [rating]="product.rating"></app-rating>
+    <app-price [price]="getProductPrice()"></app-price>
+</div>
+<div class="product-card-buttons">
+    <app-button [isDisabled]="!getProductAvailableWithoutSelectedCount()" [isAvailableInStorageWithoutSelected]="getProductIsAvailable() && !getProductAvailableWithoutSelectedCount()" (addProductToCart)="addToCart()"></app-button>
+    <app-button-favourite (click)="toggleIsFavourite()" [isFavourite]="isFavourite"></app-button-favourite>
+</div>
+<div class="product-available" [ngSwitch]="getProductIsAvailable()">
+    <div *ngSwitchCase="true">В наличии: <span class="product-available-count">{{ product.available }} шт.</span></div>
+    <div *ngSwitchDefault class="product-not-available">Нет в наличии</div>
+</div>

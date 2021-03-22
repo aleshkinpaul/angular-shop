@@ -1,0 +1,16 @@
+<div class="functional-panel">
+    <app-toggle [toggles]="toggles" 
+        (onChange)="filterProductList($event)"
+    ></app-toggle>
+    <app-cart [inCart]="inCart" 
+        (clearCart)="clearCart()"
+        (deleteProductFromCart)="deleteProductFromCart($event)"
+    ></app-cart>
+</div>
+<div class="product-card-list">
+    <app-product-card *ngFor="let item of catalogProducts" 
+        (addProductToCart)="addToCart($event)" 
+        [product]="item"
+        [inCart]="inCart"
+    ></app-product-card>
+</div>

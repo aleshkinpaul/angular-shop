@@ -1,0 +1,25 @@
+
+p {
+    margin: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: absolute;
+    width: 1.75em;
+    height: 1.75em;
+
+    top: -5px;
+    right: -5px;
+  
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 0;
+    letter-spacing: -0em;
+  
+    color: rgb(255, 255, 255);
+    background: #FF3366;
+    border-radius: 2em;
+  }

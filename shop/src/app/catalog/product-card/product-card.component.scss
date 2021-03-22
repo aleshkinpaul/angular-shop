@@ -1,0 +1,64 @@
+
+h6, h5, h4, h3, h2, h1 {
+    margin: 0;
+}
+
+.product-card-bage {
+    position: absolute;
+    padding: 24px 0 0 0;
+    margin: 0;
+}
+
+.product-card-image {
+    margin: 0 0 32px;
+    padding: 36px 12px 0;
+
+    width: 248px;
+    height: 248px;
+}
+
+.product-card-description {
+    font-style: normal;
+}
+
+.product-card-company {
+    margin: 0 0 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.0024em;
+
+    color: #8855FF;
+}
+
+.product-card-title {
+    margin: 0 0 8px;
+    
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #111111;
+}
+
+.product-card-buttons {
+    margin: 0 0 20px;
+    display: flex;
+}
+
+.product-available {
+    margin: 0 0 20px;
+}
+
+.product-available-count {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.0024em;
+
+    color: #8855FF;
+}
+
+.product-not-available {
+    color: #FF3366;
+}

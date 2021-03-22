@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+//    font-family: 'Material Icons', Inter;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+
+    width: 1340px;
+
+    padding: 50px 120px;
+    display: flex;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none;
+}
+
+app-root {
+    justify-content: center;
+}
