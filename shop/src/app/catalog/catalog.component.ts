@@ -1,4 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 import { Product } from './types/card';
 import { products } from './data/products.data';
@@ -20,10 +21,16 @@ export class CatalogComponent implements OnInit {
   togglesParams: Array<ToggleParams> = togglesParams;
   toggles: Array<Toggle> = [];
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.getTogglesState();
+  }
+
+  OpenRoute(route: string): void {
+    this.router.navigateByUrl(`/${route}`);;
   }
 
   addToCart(productToCart: Product) {
@@ -43,7 +50,6 @@ export class CatalogComponent implements OnInit {
 
   filterProductList(toggles: Array<Toggle>) {
     let filteredCatalog = products;
-    console.log(toggles);
 
     toggles.forEach(toggle => {
       if (toggle.toggleParams.label === ToggleTitles.SHOW_ALL_ITEMS) filteredCatalog = products;
@@ -52,7 +58,6 @@ export class CatalogComponent implements OnInit {
     });
 
     this.catalogProducts = filteredCatalog;
-    console.log('this.catalogProducts: ', this.catalogProducts);
   }
 
   clearCart() {
