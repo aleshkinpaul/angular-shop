@@ -7,11 +7,13 @@ import { BageModule } from './bage/bage.module';
 import { PriceModule } from './price/price.module';
 import { RatingModule } from './rating/rating.module';
 import { ButtonFavouriteModule } from './button-favourite/button-favourite.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ProductCardComponent],
   imports: [
     CommonModule,
+    RouterModule,
     ButtonModule,
     BageModule,
     PriceModule,

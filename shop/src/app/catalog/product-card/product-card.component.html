@@ -1,5 +1,7 @@
 <app-bage class="product-card-bage" [price]="getProductPrice()" *ngIf="isDiscount"></app-bage>
-<img class="product-card-image" [src]="product.imageUrl">
+<img class="product-card-image" 
+    [src]="product.imageUrl"
+    [routerLink]="['/products', product.id]">
 <div class="product-card-description">
     <h4 class="product-card-company">{{ product.company }}</h4>
     <h2 class="product-card-title">{{ product.title }}</h2>

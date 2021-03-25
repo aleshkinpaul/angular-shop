@@ -10,11 +10,15 @@ h6, h5, h4, h3, h2, h1 {
 }
 
 .product-card-image {
+    cursor: pointer;
+
     margin: 0 0 32px;
     padding: 36px 12px 0;
 
     width: 248px;
     height: 248px;
+
+    outline-style: none;
 }
 
 .product-card-description {

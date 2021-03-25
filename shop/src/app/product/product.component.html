@@ -1,0 +1,9 @@
+
+<h2 class="product-title">{{ product.title }}</h2>
+<h4 class="product-company">{{ product.company }}</h4>
+<img class="product-image" 
+    [src]="product.imageUrl">
+<div class="product-available" [ngSwitch]="getProductIsAvailable()">
+    <div *ngSwitchCase="true">В наличии: <span class="product-available-count">{{ product.available }} шт.</span></div>
+    <div *ngSwitchDefault class="product-not-available">Нет в наличии</div>
+</div>

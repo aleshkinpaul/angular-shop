@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router'
 import { Product } from '../types/card';
 import { InCart } from '../types/cart';
 
@@ -16,7 +17,9 @@ export class ProductCardComponent implements OnInit {
   @Output() addProductToCart = new EventEmitter<Product>();
 
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   getProductPrice() {
     return this.product.price? this.product.price : { value: 0 };
@@ -44,13 +47,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   getProductAvailableWithoutSelectedCount() {
-    console.log('check inCart: ', this.inCart);
     let selectedProductIndexInCart = this.inCart.findIndex(x => x.product.id === this.product.id);
-    console.log('check selectedProductIndexInCart', selectedProductIndexInCart);
-    console.log('countInCart: ', this.inCart[selectedProductIndexInCart] ? this.inCart[selectedProductIndexInCart].count : 0, ', countInStorage: ', this.getProductAvailableCount());
-    console.log('result: ', ( selectedProductIndexInCart === -1 ) ?
-    this.getProductIsAvailable() :
-    ( this.inCart[selectedProductIndexInCart].count - this.getProductAvailableCount() > 0 ));
     return ( selectedProductIndexInCart === -1 ) ?
             this.getProductIsAvailable() :
             ( this.getProductAvailableCount() - this.inCart[selectedProductIndexInCart].count > 0 );

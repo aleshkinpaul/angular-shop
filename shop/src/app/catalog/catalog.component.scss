@@ -3,6 +3,10 @@
     display: flex;
 }
 
+.active {
+    color: rgb(8, 78, 206);
+}
+
 .functional-panel {
     display: flex;
     justify-content: space-between;
