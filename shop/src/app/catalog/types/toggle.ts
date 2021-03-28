@@ -1,4 +1,3 @@
-
 export interface Toggle {
   isActive: boolean
   toggleParams: ToggleParams

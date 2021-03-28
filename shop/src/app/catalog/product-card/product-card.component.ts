@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 import { Product } from '../types/card';
 import { InCart } from '../types/cart';
 
@@ -12,7 +12,7 @@ export class ProductCardComponent implements OnInit {
   @Input() product!: Product;
   @Input() inCart!: Array<InCart>;
   isDiscount!: boolean;
-  isFavourite: boolean = false;
+  isFavourite = false;
 
   @Output() addProductToCart = new EventEmitter<Product>();
 
@@ -22,7 +22,7 @@ export class ProductCardComponent implements OnInit {
   ) { }
 
   getProductPrice() {
-    return this.product.price? this.product.price : { value: 0 };
+    return this.product.price ? this.product.price : { value: 0 };
   }
 
   ngOnChange() {
@@ -47,7 +47,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   getProductAvailableWithoutSelectedCount() {
-    let selectedProductIndexInCart = this.inCart.findIndex(x => x.product.id === this.product.id);
+    const selectedProductIndexInCart = this.inCart.findIndex(x => x.product.id === this.product.id);
     return ( selectedProductIndexInCart === -1 ) ?
             this.getProductIsAvailable() :
             ( this.getProductAvailableCount() - this.inCart[selectedProductIndexInCart].count > 0 );

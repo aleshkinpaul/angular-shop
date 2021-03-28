@@ -1,7 +1,7 @@
 <div class="catalog-toggles">
-    <button class="catalog-toggle-button" 
-            [ngClass]="{ 'active': item.isActive }"
-            *ngFor="let item of availableToggles"
-            (click)="onClick(item)"
-            >{{ item.toggleParams.label }}</button>
+  <button class="catalog-toggle-button"
+          [ngClass]="{ 'active': item.isActive }"
+          *ngFor="let item of availableToggles"
+          (click)="onClick(item)"
+  >{{ item.toggleParams.label }}</button>
 </div>

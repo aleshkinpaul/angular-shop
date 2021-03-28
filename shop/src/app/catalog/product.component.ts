@@ -1,8 +1,8 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Product } from '../catalog/types/card'
-import { products } from '../catalog/data/products.data'
+import { Product } from './types/card'
+import { products } from './data/products.data'
 
 @Component({
   selector: 'app-product',
@@ -26,7 +26,9 @@ export class ProductComponent implements OnInit, OnChanges {
     if (this.product.price) {
       this.isDiscount = !!this.product.price.discount;
     }
+    console.log('this.productId: ', this.productId);
     this.findedProduct = products.find(x => x.id === Number(this.productId));
+    console.log('this.findedProduct: ', this.findedProduct);
     (!this.findedProduct) ? this.router.navigateByUrl('/404') : this.product = this.findedProduct;
   }
 
