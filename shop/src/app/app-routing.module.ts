@@ -1,9 +1,7 @@
-import { CommonModule } from '@angular/common'
-import { NgModule } from '@angular/core'
-import { ExtraOptions, PreloadAllModules, RouterModule, Routes } from '@angular/router'
-import { CatalogComponent } from './catalog/catalog.component'
-import { Page404Component } from './page404/page404.component'
-import { ProductComponent } from './product/product.component'
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ExtraOptions, PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Page404Component } from './page404/page404.component';
 
 export const routes: Routes = [
   {
@@ -13,11 +11,7 @@ export const routes: Routes = [
   },
   {
     path: 'products',
-    component: CatalogComponent
-  },
-  {
-    path: 'products/:id',
-    component: ProductComponent
+    loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule),
   },
   {
     path: '404',
@@ -27,11 +21,11 @@ export const routes: Routes = [
     path: '**',
     redirectTo: '404'
   }
-]
+];
 
 export const options: ExtraOptions = {
   preloadingStrategy: PreloadAllModules,
-}
+};
 
 @NgModule({
   declarations: [],
